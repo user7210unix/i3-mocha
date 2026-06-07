@@ -49,6 +49,13 @@ All required packages and dependencies are listed in:
 ```bash
 git clone https://github.com/tonybanters/nvim ~/.config/nvim
 ```
+---
+
+### Font
+
+```bash
+mkdir ~/.fonts && cd ~/.fonts && wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip && unzip JetBrainsMono.zip && rm -rf JetBrainsMono.zip && fc-cache -vf
+```
 
 ---
 
