@@ -58,6 +58,14 @@ mkdir ~/.fonts && cd ~/.fonts && wget https://github.com/ryanoasis/nerd-fonts/re
 ```
 
 ---
+### Icons
+
+```bash
+wget -qO- https://git.io/papirus-icon-theme-install | sh
+
+```
+
+---
 
 ## Components
 
