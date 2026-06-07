@@ -1,0 +1,161 @@
+/**
+ * Rofi Configuration File
+ * Based on Catppuccin theme colors
+ **/
+
+configuration {
+    /* List of enabled modes */
+    modi: "run,drun,window";
+    /* Number of rows to display in listview */
+    lines: 5;
+    /* Font family and size */
+    font: "JetBrainsMono 14";
+    /* Enable application icons */
+    show-icons: true;
+    /* Set icon theme */
+    icon-theme: "Papirus-dark";
+    /* Default terminal emulator */
+    terminal: "kitty";
+    /* Format for drun mode (Icon + App Name) */
+    drun-display-format: "{icon} {name}";
+    /* Position of window (0 is center) */
+    location: 0;
+    /* Keep command history */
+    disable-history: false;
+    /* Hide the vertical scrollbar */
+    hide-scrollbar: true;
+    
+    /* Custom labels for the mode switcher buttons */
+    display-drun: "| Apps |";
+    display-run: "| Run |";
+    display-window: "| Window |";
+    display-Network: "| Network |";
+    
+    /* Enable the mode switcher at the bottom/top */
+    sidebar-mode: true;
+}
+
+/* Load the color variables from the catppuccin theme */
+@theme "catppuccin"
+
+/* Ensure text and icons inherit colors from their parent elements */
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+/* Styling for the mode switcher container */
+mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+    padding: 0 0 10px 0;
+    spacing: 0;
+}
+
+/* The main outer window properties */
+window {
+    height: 360px;
+    border: 1px;
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+/* The main internal container */
+mainbox {
+    background-color: @bg-col;
+}
+
+/* The search bar area container */
+inputbar {
+    children: [prompt, entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+/* The mode label (e.g., "| Apps |") */
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+/* Separator between prompt and entry (not used in children above, but defined) */
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+/* The text input area */
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+    placeholder: "Search";
+}
+
+/* The list of results */
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 20px;
+    columns: 2;
+    background-color: @bg-col;
+}
+
+/* Individual items in the list */
+element {
+    padding: 5px;
+    background-color: @bg-col;
+    text-color: @fg-col;
+}
+
+/* Icon size within the list */
+element-icon {
+    size: 25px;
+}
+
+/* Styling for the currently selected item */
+element selected {
+    background-color: @selected-col;
+    text-color: @fg-col2;
+}
+
+/* Individual mode buttons in the switcher */
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+/* Styling for the active mode button */
+button selected {
+    background-color: @bg-col;
+    text-color: @blue;
+}
+
+/* --- Error Message Styling --- */
+
+/* The container window for the error */
+error-message {
+    background-color: @bg-col;
+    /* Large padding creates the 'box' around the message */
+    padding: 50px; 
+}
+
+/* The actual text element */
+textbox {
+    text-color: @bg-col;
+    background-color: @blue;
+    padding: 20px;
+    border-radius: 5px;
+    
+    /* horizontal-align here only centers the text strings inside the blue box */
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
